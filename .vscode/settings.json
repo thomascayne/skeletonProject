@@ -1,0 +1,55 @@
+{
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "files.exclude": {
+    ".vs/": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/*.sln": true,
+    "dist": true,
+    "node_modules": true,
+    "obj/": true,
+    "packages/": true,
+    "VersionInfo.cs": true
+  },
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 80,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+  "importSorter.importStringConfiguration.quoteMark": "single",
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.sortConfiguration.customOrderingRules.defaultOrderLevel": 80,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [{
+      "disableSort": true,
+      "orderLevel": 10,
+      "regex": "^$",
+      "type": "importMember"
+    },
+    {
+      "orderLevel": 20,
+      "regex": "^@angular"
+    },
+    {
+      "orderLevel": 30,
+      "regex": "^ts-mocks|@datorama|@ng-bootstrap|lodash|ng-mocks|ngx-take-until-destroy|ngx-toastr|rxjs"
+    },
+    {
+      "orderLevel": 40,
+      "regex": "^@app"
+    },
+    {
+      "orderLevel": 100,
+      "regex": "^[.]"
+    }
+  ],
+  "importSorter.sortConfiguration.importMembers.order": "lowercaseLast",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.reportStyleChecksAsWarnings": false
+}
