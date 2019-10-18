@@ -1,29 +1,29 @@
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
-import { DataService } from '../../core/data/data.service';
-import { HomeComponent } from './home.component';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
+
+import { DataService } from '@app/core/data/data.service';
+import { HomeComponent } from '@app/pages/home/home.component';
 
 describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+  let spectator: Spectator<HomeComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [HomeComponent],
-      imports: [HttpClientModule, HttpClientTestingModule],
-      providers: [DataService],
-    }).compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  const createComponent = createComponentFactory({
+    component: HomeComponent,
+    imports: [HttpClientModule, HttpClientTestingModule],
+    providers: [DataService],
   });
 
+  beforeEach(() => (spectator = createComponent()));
+
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator).toBeTruthy();
+  });
+
+  it('should have h1 tag as "HOME"', () => {
+    const h1 = spectator.query('h1');
+
+    expect(h1).toHaveText('HOME');
   });
 });
