@@ -38,10 +38,14 @@
     },
     {
       "orderLevel": 30,
-      "regex": "^ts-mocks|@datorama|@ng-bootstrap|lodash|ng-mocks|ngx-take-until-destroy|ngx-toastr|rxjs"
+      "regex": "^@ngneat|@datorama|@ng-bootstrap"
     },
     {
-      "orderLevel": 40,
+      "orderLevel": 50,
+      "regex": "^ts-mocks|ng-mocks|ngx-take-until-destroy|ngx-toastr|rxjs"
+    },
+    {
+      "orderLevel": 60,
       "regex": "^@app"
     },
     {
